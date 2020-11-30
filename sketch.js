@@ -24,7 +24,7 @@ function setup() {
   
   foodStock = database.ref('food');
   foodStock.on("value",readStock);
-  foodStock.set(20);
+  //foodStock.set(20);
   
   milk = createSprite(140,435,10,10);
   milk.addImage(milkImg);
@@ -89,7 +89,7 @@ function draw() {
 if(foodS == 0){
   
   dog.addImage(dogImg);
-  foodS = 20;
+  //foodS = 20;
 
 }
 
@@ -102,7 +102,9 @@ if(foodS == 0){
   fill("black");
   text("Long Press up arrow key to feed your pet Dog Shiro",50,50);
   fill("black");
+  if (foodS!==undefined){
   text("Milk Bottles Remaining  "+foodS,170,440);
+  }
 }
 
 function readStock(data)
